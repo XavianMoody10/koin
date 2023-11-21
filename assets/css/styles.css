@@ -1,0 +1,127 @@
+:root {
+  /* FONTS */
+  --primary-fnt: "Poppins", sans-serif;
+
+  /* COLORS */
+  --primary-clr: #bc8afc;
+}
+
+/* -------------------- RESET -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--primary-fnt);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* -------------------- UTILITIES -------------------- */
+
+.btn--purple {
+  background-color: var(--primary-clr);
+  color: black;
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+
+.btn--purple:hover {
+}
+
+/* -------------------- MOBILE HEADER -------------------- */
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 10px;
+}
+
+.mobile-navigation {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  transform: translateX(-100%);
+}
+
+.mobile-header__icon {
+  font-size: 2rem;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .mobile-header {
+    display: none;
+  }
+}
+
+/* -------------------- DESKTOP HEADER -------------------- */
+
+.desktop-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  padding: 25px 20px;
+}
+
+.desktop-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.desktop-navigation__list {
+  display: flex;
+  gap: 45px;
+}
+
+.desktop-navigation__anchor {
+  color: white;
+  font-weight: 300;
+}
+
+.signin-btn {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 1024px) {
+  .desktop-header {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 1400px) {
+  .desktop-header__inner {
+    max-width: 1250px;
+  }
+
+  .desktop-navigation__anchor {
+    font-size: 1.2rem;
+  }
+
+  .signin-btn {
+    font-size: 1.3rem;
+  }
+
+  .desktop-header__logo {
+    width: 150px;
+  }
+}
+
+/* -------------------- HERO SECTION -------------------- */
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(144deg, #190422 21.1%, #190422 102.96%);
+}
