@@ -32,6 +32,7 @@ li {
 }
 
 .btn--purple:hover {
+  background-color: #d3b4ff;
 }
 
 /* -------------------- MOBILE HEADER -------------------- */
@@ -84,7 +85,7 @@ li {
 
 .desktop-navigation__list {
   display: flex;
-  gap: 45px;
+  gap: 50px;
 }
 
 .desktop-navigation__anchor {
@@ -116,7 +117,7 @@ li {
   }
 
   .desktop-header__logo {
-    width: 150px;
+    width: 140px;
   }
 }
 
