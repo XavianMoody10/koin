@@ -126,10 +126,12 @@ li {
 /* -------------------- HERO SECTION -------------------- */
 .hero-section {
   background: linear-gradient(144deg, #190422 21.1%, #190422 102.96%);
+  height: 800px;
+  position: relative;
 }
 
 .hero-section__inner {
-  padding: 100px 10px 0 10px;
+  padding: 100px 20px 0 20px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -149,7 +151,7 @@ li {
 }
 
 .hero-text__heading {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   font-weight: 500;
 }
 
@@ -163,21 +165,50 @@ li {
 }
 
 .hero-section__image--mobile {
-  max-width: 400px;
+  max-width: 280px;
   align-self: center;
 }
+
 .hero-section__image--desktop {
   display: none;
 }
 
+.stats {
+  position: absolute;
+  bottom: -310px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+  width: 92%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat__number {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.stat__number span {
+  color: var(--primary-clr);
+}
+
 @media (min-width: 478px) {
   .hero-section {
-    height: 800px;
+    height: 700px;
   }
 
   .hero-section__inner {
     position: relative;
-    /* max-width: 522px; */
     margin: 0 auto;
   }
 
@@ -185,6 +216,27 @@ li {
     position: absolute;
     right: 0;
     top: 300px;
+  }
+
+  .stats {
+    bottom: -70px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 670px) {
+  .hero-section {
+    height: 650px;
+  }
+
+  .hero-section__image--mobile {
+    max-width: 370px;
+    top: 150px;
+  }
+
+  .stats {
+    bottom: -70px;
   }
 }
 
@@ -222,11 +274,15 @@ li {
     top: 140px;
     max-width: 370px;
   }
+
+  .stats {
+    bottom: -70px;
+  }
 }
 
 @media (min-width: 1024px) {
   .hero-section {
-    height: 700px;
+    height: 730px;
   }
 
   .hero-section__inner {
@@ -268,11 +324,16 @@ li {
     top: 40px;
     right: 0;
   }
+
+  .stats {
+    bottom: -60px;
+    max-width: 1100px;
+  }
 }
 
 @media (min-width: 1400px) {
   .hero-section {
-    height: 850px;
+    height: 870px;
   }
 
   .hero-section__inner {
@@ -296,6 +357,123 @@ li {
   }
 
   .hero-section__image--desktop {
+    max-width: none;
+    width: 550px;
+    right: -70px;
+  }
+
+  .stats {
+    bottom: -70px;
+    max-width: 1250px;
+    justify-content: space-around;
+  }
+
+  .stat__number {
+    font-size: 3rem;
+  }
+
+  .stat__label {
+    font-size: 1.2rem;
+  }
+}
+
+/* -------------------- ABOUT SECTION -------------------- */
+.about-section {
+  height: 800px;
+}
+
+.about-section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 340px auto 0 auto;
+}
+
+.about-section__image {
+  max-width: 300px;
+}
+
+.about-text {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 474px;
+}
+
+.about-text__subtitle {
+  font-size: 2rem;
+}
+
+@media (min-width: 478px) {
+  .about-section__inner {
+    margin-top: 90px;
+  }
+
+  .about-text {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-section__inner {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .about-text {
+    text-align: start;
+    align-items: flex-start;
+    max-width: 370px;
+    gap: 20;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-section__image {
+    max-width: 450px;
+  }
+
+  .about-text {
+    max-width: 450px;
+  }
+
+  .about-text__subtitle {
+    font-size: 2.3rem;
+  }
+
+  .about-text__caption {
+    font-size: 1rem;
+  }
+
+  .about-section__inner {
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .about-section__image {
     max-width: 500px;
+  }
+
+  .about-section__inner {
+    max-width: 1300px;
+    margin-top: 120px;
+  }
+
+  .about-text {
+    max-width: 550px;
+  }
+
+  .about-text__subtitle {
+    font-size: 2.3rem;
+  }
+
+  .about-text__caption {
+    font-size: 1.2rem;
   }
 }
