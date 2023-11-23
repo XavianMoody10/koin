@@ -482,84 +482,244 @@ li {
   }
 }
 
-/*  */
+/* -------------------- SERVICES SECTION -------------------- */
 .services-section {
-  margin-top: 80px;
-  padding: 0 10px;
-  background: conic-gradient(
-    from -38deg at 72.08% 78.43%,
-    rgba(28, 146, 255, 0) 0deg,
-    rgba(255, 255, 255, 0.35) 360deg
-  );
+  margin-top: 30px;
+  background: linear-gradient(176deg, #fdfeff 1.63%, #edf6ff 98.24%);
 }
 
-.services-section__subtitle {
-  font-size: 1.8rem;
+.services-inner {
+  padding: 0 10px 30px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.services-inner__subtitle {
+  font-size: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  gap: 20px 30px;
 }
 
 .service {
   max-width: 400px;
-}
-
-.services-section__inner {
-  max-width: 1100px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  gap: 20px;
-}
-
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 30px 0;
+  gap: 15px;
 }
 
 .service__offer {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .service__description {
-  margin-top: 15px;
+  font-size: 1rem;
 }
 
-@media (min-width: 584px) {
-  .services-section__inner {
-    max-width: 940px;
+.app-advertisement {
+  background-color: #190422;
+  padding: 20px 10px 0 10px;
+}
+
+.app-advertisement__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  height: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.app-advertisement__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-advertisement__image {
+  display: inline-block;
+  margin: 0 auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.297);
+}
+
+.app-advertisement__subtitle {
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+@media (min-width: 450px) {
+  .services-section {
+    height: 1350px;
+    position: relative;
   }
 
-  .services-container {
-    grid-template-columns: repeat(2, 1fr);
+  .services-inner {
+    padding: 30px 25px 0 25px;
     gap: 30px;
+  }
+
+  .services-inner__subtitle {
+    font-size: 1.7rem;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 40px;
+  }
+
+  .app-advertisement {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+@media (min-width: 562px) {
+  .services-section {
+    height: 1200px;
+  }
+
+  .store-images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .app-advertisement__store {
+    width: 140px;
+  }
+
+  .app-advertisement {
+    height: 250px;
+  }
+
+  .app-advertisement__text {
+    width: 270px;
+    align-items: flex-start;
+    gap: 30px;
+    padding-left: 20px;
+  }
+
+  .app-advertisement__subtitle {
+    font-size: 1.6rem;
+  }
+
+  .app-advertisement__image {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    width: 250px;
+  }
+}
+
+@media (min-width: 672px) {
+  .services-section {
+    height: 1100px;
+    position: relative;
+  }
+
+  .store-images {
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .app-advertisement {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .app-advertisement__text {
+    width: 350px;
+  }
+}
+
+@media (min-width: 768px) {
+  .services-section {
+    background: conic-gradient(
+      from 300deg at 48% 0%,
+      #c9e5ff,
+      #e4f2ff,
+      rgba(255, 255, 255, 1)
+    );
+  }
+
+  .app-advertisement__text {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-section {
+    height: 1100px;
+  }
+
+  .app-advertisement {
+    height: 320px;
+  }
+
+  .app-advertisement__image {
+    width: 250px;
+  }
+
+  .app-advertisement__text {
+    width: 700px;
+    padding-left: 0;
+    position: relative;
+    top: 60px;
+  }
+
+  .app-advertisement__subtitle {
+    font-size: 2.2rem;
+  }
+
+  .store-images {
+    gap: 30px;
+  }
+
+  .app-advertisement__store {
+    width: 145px;
   }
 }
 
 @media (min-width: 1400px) {
-  .services-section__subtitle {
+  .services-section {
+    height: 1300px;
+  }
+
+  .services-inner {
+    padding-top: 80px;
+    max-width: 1150px;
+  }
+
+  .services-inner__subtitle {
     font-size: 2.8rem;
   }
 
-  .services-section__inner {
+  .service {
+    max-width: 500px;
+  }
+
+  .service__offer,
+  .service__description {
+    font-size: 1.2rem;
+  }
+
+  .app-advertisement__inner {
     max-width: 1100px;
   }
 
-  .services-container {
-    gap: 35px 40px;
-  }
-
-  .service {
-    max-width: 450px;
-  }
-
-  .service__image {
-    width: 120px;
-  }
-
-  .service__offer {
-    font-size: 1.2rem;
-  }
-
-  .service__description {
-    font-size: 1.2rem;
+  .app-advertisement__image {
+    width: 300px;
   }
 }
