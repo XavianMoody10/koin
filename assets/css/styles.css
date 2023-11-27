@@ -402,6 +402,7 @@ li {
   display: flex;
   align-items: center;
   width: calc(290px * 3);
+  transition-duration: 0.1s;
 }
 
 .testimonial-card {

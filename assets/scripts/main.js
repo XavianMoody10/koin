@@ -52,4 +52,42 @@ function desktopDarkHeader() {
   });
 }
 
+// Testimonial Slider
+function testimonialSliderAnimation() {
+  let sliderPosition = 0;
+  const sliderInner = document.querySelector(".testimonial-slider__inner");
+  const slides = document.querySelectorAll(".testimonial-card");
+  const arrows = document.querySelectorAll(".slider-controls__arrow");
+  const backwardArrow = arrows[0];
+  const forwardArrow = arrows[1];
+  const translateCalc = sliderInner.offsetWidth / slides.length + 10;
+
+  // execute slide when called
+  function slide(num) {
+    sliderPosition = sliderPosition + num;
+    sliderInner.style.transform = `translateX(${sliderPosition}px)`;
+  }
+
+  // Move slide forward
+  forwardArrow.addEventListener("click", () => {
+    const max = -translateCalc * (slides.length % 2);
+
+    if (sliderPosition === max) {
+      return;
+    } else {
+      slide(-translateCalc);
+    }
+  });
+
+  // Move slide backwards
+  backwardArrow.addEventListener("click", () => {
+    if (sliderPosition === 0) {
+      return;
+    } else {
+      slide(translateCalc);
+    }
+  });
+}
+
 desktopDarkHeader();
+testimonialSliderAnimation();
