@@ -39,6 +39,26 @@ li {
   background-color: #d3b4ff;
 }
 
+@keyframes darkHeader {
+  0% {
+    transform: translateY(0);
+    background-color: transparent;
+  }
+
+  50% {
+    transform: translateY(-100%);
+  }
+
+  75% {
+    background: #190422;
+  }
+
+  100% {
+    transform: translateY(0);
+    background: #190422;
+  }
+}
+
 /* -------------------- MOBILE HEADER -------------------- */
 .mobile-header {
   display: flex;
@@ -49,6 +69,10 @@ li {
   width: 100%;
   padding: 15px 20px;
   z-index: 10;
+}
+
+.mobile-header--dark {
+  animation: darkHeader 0.05s forwards ease-in-out;
 }
 
 .mobile-navigation {
@@ -103,7 +127,7 @@ li {
   }
 }
 
-@keyframes darkHeader {
+/* @keyframes darkHeader {
   0% {
     transform: translateY(0);
     background-color: transparent;
@@ -121,7 +145,7 @@ li {
     transform: translateY(0);
     background: #190422;
   }
-}
+} */
 
 .desktop-header__inner {
   display: flex;
