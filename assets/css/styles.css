@@ -1146,4 +1146,8 @@ li {
   .footer-bottom {
     gap: 40px;
   }
+
+  .footer-top .footer-socials__list {
+    margin-top: 30px;
+  }
 }
