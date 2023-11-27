@@ -75,6 +75,54 @@ li {
   z-index: 10;
 }
 
+.desktop-header--default {
+  animation: defaultHeader 0.05s forwards ease-in-out;
+}
+
+.desktop-header--dark {
+  animation: darkHeader 0.05s forwards ease-in-out;
+}
+
+@keyframes defaultHeader {
+  0% {
+    transform: translateY(0);
+    background: #190422;
+  }
+
+  50% {
+    transform: translateY(-100%);
+  }
+
+  75% {
+    background-color: transparent;
+  }
+
+  100% {
+    transform: translateY(0);
+    background-color: transparent;
+  }
+}
+
+@keyframes darkHeader {
+  0% {
+    transform: translateY(0);
+    background-color: transparent;
+  }
+
+  50% {
+    transform: translateY(-100%);
+  }
+
+  75% {
+    background: #190422;
+  }
+
+  100% {
+    transform: translateY(0);
+    background: #190422;
+  }
+}
+
 .desktop-header__inner {
   display: flex;
   align-items: center;
@@ -177,9 +225,6 @@ li {
 }
 
 /* -------------------- ABOUT SECTION -------------------- */
-.about-section {
-  /* height: 800px; */
-}
 
 .about-section__inner {
   display: flex;
