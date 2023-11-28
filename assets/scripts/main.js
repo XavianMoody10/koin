@@ -1,5 +1,54 @@
 "use strict";
 
+// Toggle Mobile Header
+function toggleMobileHeader() {
+  const mobileBarsIcon = document.querySelector(".fa-bars");
+  const mobileCloseIcon = document.querySelector(".fa-xmark");
+  const mobileNavigation = document.querySelector(".mobile-navigation");
+  const mobileAnchors = document.querySelectorAll(".mobile-navigation__anchor");
+  const body = document.querySelector("body");
+  let isOpen = false;
+
+  // Disable scrolling when mobile navigation is open
+  function disableScrolling() {
+    body.classList.add("scrolling--disable");
+    body.classList.remove("scrolling--enable");
+  }
+
+  // Enable scrolling when mobile navigation is closed
+  function enableScrolling() {
+    body.classList.add("scrolling--enable");
+    body.classList.remove("scrolling--diable");
+  }
+
+  mobileBarsIcon.addEventListener("click", () => {
+    // Open menu
+    isOpen = true;
+
+    if (isOpen) {
+      mobileNavigation.classList.add("mobile-navigation--open");
+      mobileNavigation.classList.remove("mobile-navigation--close");
+      disableScrolling();
+    }
+  });
+
+  mobileCloseIcon.addEventListener("click", () => {
+    // Close menu
+    mobileNavigation.classList.add("mobile-navigation--close");
+    mobileNavigation.classList.remove("mobile-navigation--open");
+    enableScrolling();
+  });
+
+  mobileAnchors.forEach((anchor) => {
+    anchor.addEventListener("click", () => {
+      mobileNavigation.classList.add("mobile-navigation--close");
+      mobileNavigation.classList.remove("mobile-navigation--open");
+    });
+  });
+}
+
+toggleMobileHeader();
+
 // Reusable intersection observer functio
 function intersectionObserver(options, element) {
   let elIsVisible;
@@ -67,7 +116,7 @@ function darkHeaderAffectAnimation() {
 // Testimonial Slider
 function testimonialSliderAnimation() {
   let sliderPosition = 0;
-  const sliderInner = document.querySelector(".testimonial-slider__inner");
+  let sliderInner = document.querySelector(".testimonial-slider__inner");
   const slides = document.querySelectorAll(".testimonial-card");
   const arrows = document.querySelectorAll(".slider-controls__arrow");
   const backwardArrow = arrows[0];
@@ -77,7 +126,7 @@ function testimonialSliderAnimation() {
   // Get the amont of slides in the slider
   // We must take into account the spacing between the slides, which is 10px
   // So, divide the slider's width by the number of slides + 10px and it will give you the exact number of pixels to move the slider each time the slider is interacted (exposing one slide at a time).
-  const translateCalc = sliderInner.offsetWidth / slides.length + 10;
+  let translateCalc = sliderInner.offsetWidth / slides.length + 10;
 
   // Execute slide animation
   function slide(num) {
@@ -85,7 +134,7 @@ function testimonialSliderAnimation() {
     sliderInner.style.transform = `translateX(${sliderPosition}px)`;
   }
 
-  // Forward slide eventlistener
+  // Forward slider eventlistener
   forwardArrow.addEventListener("click", () => {
     const max = -translateCalc * (slides.length - 1);
 
@@ -96,13 +145,23 @@ function testimonialSliderAnimation() {
     }
   });
 
-  // Backward slide eventlistener
+  // Backward slider eventlistener
   backwardArrow.addEventListener("click", () => {
     if (sliderPosition === 0) {
       return;
     } else {
       slide(translateCalc);
     }
+  });
+
+  // Reset testimonial slider when orientation changes
+  window.addEventListener("orientationchange", () => {
+    setTimeout(() => {
+      sliderPosition = 0;
+      const newTranslateCalc = sliderInner.offsetWidth / slides.length + 10;
+      translateCalc = newTranslateCalc;
+      sliderInner.style.transform = `translateX(0)`;
+    }, 800);
   });
 }
 

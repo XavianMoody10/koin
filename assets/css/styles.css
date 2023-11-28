@@ -28,6 +28,14 @@ li {
 
 /* -------------------- UTILITIES -------------------- */
 
+.scrolling--disable {
+  overflow: hidden;
+}
+
+.scrolling--enable {
+  overflow: scroll;
+}
+
 .btn--purple {
   background-color: var(--primary-clr);
   color: black;
@@ -72,14 +80,60 @@ li {
 }
 
 .mobile-header--dark {
-  animation: darkHeader 0.05s forwards ease-in-out;
+  animation: darkHeader 0.5s forwards ease-in-out;
 }
 
 .mobile-navigation {
   position: fixed;
   height: 100vh;
   width: 100%;
+  top: 0;
+  left: 0;
   transform: translateX(-100%);
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background-color: #190422;
+}
+
+.mobile-navigation--open {
+  animation: mobileNavigationOpen 0.5s ease-in-out forwards;
+}
+.mobile-navigation--close {
+  animation: mobileNavigationClose 0.5s ease-in-out backwards;
+}
+
+@keyframes mobileNavigationOpen {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes mobileNavigationClose {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.mobile-navigation__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.mobile-navigation__anchor {
+  color: white;
+  font-size: 1.2rem;
 }
 
 .mobile-header__icon {
@@ -100,11 +154,11 @@ li {
 }
 
 .desktop-header--default {
-  animation: defaultHeader 0.05s forwards ease-in-out;
+  animation: defaultHeader 0.3s forwards ease-in-out;
 }
 
 .desktop-header--dark {
-  animation: darkHeader 0.05s forwards ease-in-out;
+  animation: darkHeader 0.3s forwards ease-in-out;
 }
 
 @keyframes defaultHeader {
@@ -127,26 +181,6 @@ li {
   }
 }
 
-/* @keyframes darkHeader {
-  0% {
-    transform: translateY(0);
-    background-color: transparent;
-  }
-
-  50% {
-    transform: translateY(-100%);
-  }
-
-  75% {
-    background: #190422;
-  }
-
-  100% {
-    transform: translateY(0);
-    background: #190422;
-  }
-} */
-
 .desktop-header__inner {
   display: flex;
   align-items: center;
@@ -163,6 +197,10 @@ li {
 .desktop-navigation__anchor {
   color: white;
   font-weight: 300;
+}
+
+.desktop-navigation__anchor:hover {
+  color: var(--primary-clr);
 }
 
 .signin-btn {
@@ -426,7 +464,7 @@ li {
   display: flex;
   align-items: center;
   width: calc(290px * 3);
-  transition-duration: 0.1s;
+  transition-duration: 0.3s;
 }
 
 .testimonial-card {

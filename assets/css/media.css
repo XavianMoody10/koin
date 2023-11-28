@@ -1,4 +1,24 @@
 /* -------------------- MOBILE HEADER -------------------- */
+@media (min-width: 320px) and (orientation: landscape) {
+  .mobile-navigation {
+    width: 100%;
+  }
+
+  .mobile-navigation__anchor {
+    font-size: 0.9rem;
+  }
+
+  .mobile-navigation__list {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 640px) {
+  .mobile-navigation {
+    width: 50%;
+  }
+}
+
 @media (min-width: 1024px) {
   .mobile-header {
     display: none;
