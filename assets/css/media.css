@@ -1,5 +1,5 @@
 /* -------------------- MOBILE HEADER -------------------- */
-@media (min-width: 320px) and (orientation: landscape) {
+@media (max-width: 1024px) and (orientation: landscape) {
   .mobile-navigation {
     width: 100%;
   }
@@ -14,8 +14,8 @@
 }
 
 @media (min-width: 640px) {
-  .mobile-navigation {
-    width: 50%;
+  .mobile-navigation__anchor {
+    font-size: 1.7rem;
   }
 }
 
